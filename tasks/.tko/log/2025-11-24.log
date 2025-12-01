@@ -1,0 +1,14 @@
+2025-11-24 16:46:38, MOVE, v:1, k:poo@contato, mode:DOWN
+2025-11-24 16:46:41, MOVE, v:1, k:poo@agenda, mode:DOWN
+2025-11-24 16:46:44, MOVE, v:1, k:poo@agiota, mode:DOWN
+2025-11-24 16:46:46, MOVE, v:1, k:poo@porquinho, mode:DOWN
+2025-11-24 16:46:48, MOVE, v:1, k:poo@tarifas, mode:DOWN
+2025-11-24 16:50:25, MOVE, v:1, k:poo@agenda, mode:PICK
+2025-11-24 16:50:26, EXEC, v:1, k:poo@agenda, mode:FULL, rate:0, size:103
+2025-11-24 16:50:32, MOVE, v:1, k:poo@agenda, mode:BACK
+2025-11-24 17:11:14, MOVE, v:1, k:poo@agenda, mode:PICK
+2025-11-24 17:11:14, EXEC, v:1, k:poo@agenda, mode:FULL, rate:0
+2025-11-24 17:11:17, MOVE, v:1, k:poo@agenda, mode:BACK
+2025-11-24 18:06:48, MOVE, v:1, k:poo@agenda, mode:PICK
+2025-11-24 18:06:49, EXEC, v:1, k:poo@agenda, mode:FULL, rate:0
+2025-11-24 18:06:51, MOVE, v:1, k:poo@agenda, mode:BACK
