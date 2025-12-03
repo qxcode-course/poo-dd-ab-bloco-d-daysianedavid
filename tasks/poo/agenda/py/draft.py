@@ -4,7 +4,6 @@ class Fone:
         self.number = number
 
     def is_valid(self):
-        # Validação simples (os testes nem usam erro de fone, mas deixo aqui)
         validos = "0123456789().-"
         for c in self.number:
             if c not in validos:
@@ -12,28 +11,21 @@ class Fone:
         return True
 
     def __str__(self):
-        # ex: oi:1234
         return f"{self.id}:{self.number}"
-
 
 class Contact:
     def __init__(self, name):
         self.name = name
         self.favorited = False
-        self.fones = []  # lista de Fone
+        self.fones = []  
 
     def addFone(self, fid, number):
         f = Fone(fid, number)
-        # Se quiser ativar validação real:
-        # if not f.is_valid():
-        #     print("fail: fone invalido")
-        #     return
         self.fones.append(f)
 
     def rmFone(self, index):
         if 0 <= index < len(self.fones):
             del self.fones[index]
-        # se índice inválido, não faz nada (pra não quebrar os testes)
 
     def toggleFavorited(self):
         self.favorited = not self.favorited
@@ -49,10 +41,8 @@ class Contact:
         fones_str = ", ".join(str(f) for f in self.fones)
         return f"{marker} {self.name} [{fones_str}]"
 
-
 class Agenda:
     def __init__(self):
-        # nome -> Contact
         self.contacts = {}
 
     def _get_sorted_contacts(self):
@@ -61,7 +51,6 @@ class Agenda:
         return lista
 
     def addContact(self, name, fones):
-        # fones é uma lista de Fone
         if name in self.contacts:
             contato = self.contacts[name]
         else:
@@ -99,7 +88,6 @@ class Agenda:
         linhas = [str(c) for c in self._get_sorted_contacts()]
         return "\n".join(linhas)
 
-
 def main():
     agenda = Agenda()
 
@@ -119,7 +107,6 @@ def main():
             print(agenda)
 
         elif cmd == "add":
-            # add nome id1:num1 id2:num2 ...
             name = parts[1]
             fones = []
             for token in parts[2:]:
@@ -128,7 +115,6 @@ def main():
             agenda.addContact(name, fones)
 
         elif cmd == "rmFone":
-            # rmFone nome indice
             name = parts[1]
             idx = int(parts[2])
             contato = agenda.getContact(name)
@@ -136,7 +122,6 @@ def main():
                 contato.rmFone(idx)
 
         elif cmd == "rm":
-            # rm nome
             name = parts[1]
             agenda.rmContact(name)
 
@@ -147,7 +132,6 @@ def main():
                 print(c)
 
         elif cmd == "tfav":
-            # tfav nome
             name = parts[1]
             contato = agenda.getContact(name)
             if contato is not None:
